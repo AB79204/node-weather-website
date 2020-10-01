@@ -4,6 +4,7 @@ const hbs = require('hbs')
 const geocode = require('./utils/geocode')
 const forecast = require('./utils/forecast')
 
+const port = process.env.PORT || 3000
 const app = express()
 console.log(__dirname)
 //Define paths for express config
@@ -90,6 +91,6 @@ app.get('*', (req, res) => {
         message: 'Page not found'
     })
 })
-app.listen(3000, () =>{
+app.listen(port, () =>{
     console.log('Server is up in port 3000.')
 })
